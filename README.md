@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>「Made in heaven」——神秘人千叶 - 第五人格辅助工具</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 基础重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #0a0a16 0%, #1a1a2e 50%, #0f0f1f 100%);
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+            background: #0a0a16;
             color: #e0e0e0;
             line-height: 1.5;
             min-height: 100vh;
-            overflow-x: hidden;
         }
         
         .container {
@@ -29,13 +28,12 @@
         
         /* 头部样式 */
         header {
-            background: rgba(15, 15, 25, 0.9);
+            background: rgba(15, 15, 25, 0.95);
             padding: 12px 0;
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         
@@ -54,14 +52,17 @@
         .logo-icon {
             color: #ff4757;
             font-size: 20px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .logo h1 {
             font-size: 18px;
             font-weight: 600;
-            background: linear-gradient(90deg, #ff4757, #ff6b81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ff4757;
         }
         
         nav ul {
@@ -78,36 +79,18 @@
             padding: 6px 10px;
             border-radius: 5px;
             font-size: 14px;
-            position: relative;
         }
         
-        nav ul li a:hover {
+        nav ul li a:hover, nav ul li a.active {
             color: #ff6b81;
             background: rgba(255, 107, 129, 0.1);
-        }
-        
-        nav ul li a.active {
-            color: #ff4757;
-            background: rgba(255, 71, 87, 0.15);
         }
         
         /* 英雄区域样式 */
         .hero {
             padding: 70px 0 40px;
             text-align: center;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
-            z-index: -1;
+            background: linear-gradient(135deg, #0a0a16 0%, #1a1a2e 50%, #0f0f1f 100%);
         }
         
         .hero-content {
@@ -120,7 +103,6 @@
             margin-bottom: 15px;
             color: #ffffff;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
         }
         
         .hero p {
@@ -149,7 +131,6 @@
             border-radius: 8px;
             max-width: 600px;
             text-align: left;
-            backdrop-filter: blur(5px);
         }
         
         .warning h3 {
@@ -175,18 +156,7 @@
         .download-section {
             padding: 40px 0 60px;
             text-align: center;
-            position: relative;
-        }
-        
-        .download-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
-            z-index: -1;
+            background: linear-gradient(135deg, #0a0a16 0%, #1a1a2e 50%, #0f0f1f 100%);
         }
         
         .section-title {
@@ -195,33 +165,17 @@
             font-size: 26px;
             color: #ffffff;
             font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4757, #ff6b81);
-            border-radius: 2px;
         }
         
         .download-card {
-            background: linear-gradient(135deg, rgba(30, 30, 46, 0.8) 0%, rgba(40, 40, 60, 0.8) 100%);
+            background: rgba(30, 30, 46, 0.8);
             border-radius: 12px;
             padding: 35px 30px;
             max-width: 600px;
             margin: 0 auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
             position: relative;
-            overflow: hidden;
         }
         
         .download-card::before {
@@ -270,17 +224,11 @@
             transition: all 0.3s;
             box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
             margin: 10px;
-            border: none;
-            cursor: pointer;
         }
         
         .download-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 71, 87, 0.5);
-        }
-        
-        .download-button i {
-            font-size: 18px;
         }
         
         .download-info {
@@ -299,26 +247,10 @@
             gap: 6px;
         }
         
-        .info-item i {
-            color: #ff6b81;
-        }
-        
         /* 功能展示样式 */
         .features {
             padding: 60px 0;
             background: rgba(15, 15, 25, 0.4);
-            position: relative;
-        }
-        
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 70%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
-            z-index: -1;
         }
         
         .feature-grid {
@@ -335,7 +267,6 @@
             transition: all 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            backdrop-filter: blur(5px);
         }
         
         .feature-card:hover {
@@ -348,6 +279,10 @@
             font-size: 32px;
             color: #ff6b81;
             margin-bottom: 15px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .feature-card h3 {
@@ -379,19 +314,6 @@
             font-size: 16px;
             margin-bottom: 15px;
             color: #ff6b81;
-            position: relative;
-            padding-bottom: 8px;
-        }
-        
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: #ff4757;
-            border-radius: 2px;
         }
         
         .footer-section p, .footer-section a {
@@ -427,11 +349,6 @@
         .social-links a:hover {
             background: rgba(255, 107, 129, 0.2);
             transform: translateY(-2px);
-        }
-        
-        .social-links i {
-            font-size: 16px;
-            color: #b0b0b0;
         }
         
         .copyright {
@@ -498,7 +415,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon"><i class="fas fa-crown"></i></div>
+                    <div class="logo-icon">♛</div>
                     <h1>「Made in heaven」——神秘人千叶</h1>
                 </div>
                 <nav>
@@ -521,7 +438,7 @@
                 <p>一个由AI集体智慧缝缝补补而成的实验性项目，仅供学习交流</p>
                 
                 <div class="warning">
-                    <h3><i class="fas fa-exclamation-triangle warning-icon"></i> 重要提醒</h3>
+                    <h3><span class="warning-icon">⚠️</span> 重要提醒</h3>
                     <p>本项目源码是到处扒拉开源代码，让多个AI一块儿瞎改，缝缝补补攒出来的代码，纯属学习交流用途。倒卖本辅助死全家。</p>
                 </div>
             </div>
@@ -533,30 +450,24 @@
         <div class="container">
             <h2 class="section-title">获取工具</h2>
             <div class="download-card">
-                <div class="download-icon">
-                    <i class="fas fa-download"></i>
-                </div>
+                <div class="download-icon">⬇️</div>
                 <h3>下载千叶辅助工具</h3>
                 <p>请确保您已阅读并理解免责声明后再下载使用，本工具仅供学习交流，请勿用于商业用途。</p>
                 <a href="https://pan.baidu.com/s/1qianye_project_2025" class="download-button">
-                    <i class="fas fa-cloud-download-alt"></i>
+                    <span>⬇️</span>
                     下载工具 (百度网盘)
                 </a>
                 <div class="download-info">
                     <div class="info-item">
-                        <i class="fas fa-code-branch"></i>
                         <span>版本: 2.5</span>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-weight-hanging"></i>
                         <span>大小: 约3.2MB</span>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-calendar-alt"></i>
                         <span>更新: 2025年3月</span>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-mobile-alt"></i>
                         <span>支持: Android 8.0+</span>
                     </div>
                 </div>
@@ -570,44 +481,32 @@
             <h2 class="section-title">功能特性</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="feature-icon">👥</div>
                     <h3>角色透视</h3>
                     <p>显示监管者和求生者的位置、距离和状态信息，支持四角边框和方框显示。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
+                    <div class="feature-icon">🧰</div>
                     <h3>道具识别</h3>
                     <p>自动识别地图中的密码机、椅子、板子、箱子等地形元素，并显示距离。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-vector-square"></i>
-                    </div>
+                    <div class="feature-icon">📏</div>
                     <h3>距离计算</h3>
                     <p>精确计算与各种游戏对象的距离，帮助您更好地判断局势。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chess-queen"></i>
-                    </div>
+                    <div class="feature-icon">👑</div>
                     <h3>红夫人镜像</h3>
                     <p>特殊支持红夫人镜像模式，可显示镜像中的求生者位置。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-ghost"></i>
-                    </div>
+                    <div class="feature-icon">👻</div>
                     <h3>监管者预知</h3>
                     <p>提前显示监管者类型，帮助制定应对策略。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-sliders-h"></i>
-                    </div>
+                    <div class="feature-icon">⚙️</div>
                     <h3>自定义界面</h3>
                     <p>可自定义显示内容，支持拖拽悬浮按钮，灵活调整界面布局。</p>
                 </div>
@@ -637,9 +536,9 @@
                     <p>Telegram: @qianye_project</p>
                     <p>邮箱: contact@qianye.project</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#">QQ</a>
+                        <a href="#">TG</a>
+                        <a href="#">GH</a>
                     </div>
                 </div>
             </div>
@@ -689,4 +588,3 @@
     </script>
 </body>
 </html>
-](https://chibaqy.github.io/)
