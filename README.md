@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -689,3 +689,4 @@
     </script>
 </body>
 </html>
+](https://chibaqy.github.io/)
