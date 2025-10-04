@@ -14,11 +14,24 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0a0a16 0%, #1a1a2e 50%, #0f0f1f 100%);
+            background: url('https://www.freeimg.cn/uploads/455/197b3522bf44f1824ad176656c46ca55.png') no-repeat center center fixed;
+            background-size: cover;
             color: #e0e0e0;
             line-height: 1.5;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 16, 0.4);
+            z-index: -1;
         }
         
         .container {
@@ -29,7 +42,7 @@
         
         /* 头部样式 */
         header {
-            background: rgba(15, 15, 25, 0.9);
+            background: rgba(15, 15, 25, 0.7);
             padding: 12px 0;
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
             position: sticky;
@@ -91,7 +104,7 @@
             background: rgba(255, 71, 87, 0.15);
         }
         
-        /* 英雄区域样式 */
+        /* 区域样式 */
         .hero {
             padding: 70px 0 40px;
             text-align: center;
@@ -105,8 +118,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.05) 0%, transparent 50%);
             z-index: -1;
         }
         
@@ -132,7 +145,7 @@
         
         .tagline {
             display: inline-block;
-            background: rgba(255, 71, 87, 0.15);
+            background: rgba(255, 71, 87, 0.1);
             color: #ff6b81;
             padding: 6px 16px;
             border-radius: 20px;
@@ -142,7 +155,7 @@
         }
         
         .warning {
-            background: rgba(211, 47, 47, 0.15);
+            background: rgba(211, 47, 47, 0.1);
             border: 1px solid rgba(211, 47, 47, 0.3);
             padding: 15px;
             margin: 20px auto;
@@ -185,7 +198,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 70% 30%, rgba(107, 91, 149, 0.05) 0%, transparent 50%);
             z-index: -1;
         }
         
@@ -212,7 +225,7 @@
         }
         
         .download-card {
-            background: linear-gradient(135deg, rgba(30, 30, 46, 0.8) 0%, rgba(40, 40, 60, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(30, 30, 46, 0.6) 0%, rgba(40, 40, 60, 0.6) 100%);
             border-radius: 12px;
             padding: 35px 30px;
             max-width: 600px;
@@ -341,7 +354,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 70%, rgba(107, 91, 149, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 70%, rgba(107, 91, 149, 0.05) 0%, transparent 50%);
             z-index: -1;
         }
         
@@ -353,7 +366,7 @@
         }
         
         .feature-card {
-            background: rgba(30, 30, 46, 0.6);
+            background: rgba(30, 30, 46, 0.5);
             border-radius: 10px;
             padding: 25px 20px;
             transition: all 0.3s;
@@ -364,7 +377,7 @@
         
         .feature-card:hover {
             transform: translateY(-8px);
-            background: rgba(35, 35, 55, 0.8);
+            background: rgba(35, 35, 55, 0.6);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
@@ -387,7 +400,7 @@
         
         /* 页脚样式 */
         footer {
-            background: rgba(10, 10, 20, 0.95);
+            background: rgba(10, 10, 20, 0.7);
             padding: 40px 0 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
