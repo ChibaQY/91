@@ -509,7 +509,6 @@
             left: 100%;
         }
         
-        /* --- 新增的 GitHub 按钮样式 --- */
         .github-button {
             display: inline-flex;
             align-items: center;
@@ -550,7 +549,6 @@
         .github-button:hover::before {
             left: 100%;
         }
-        /* --- 样式结束 --- */
         
         .download-button i {
             font-size: 18px;
@@ -982,9 +980,9 @@
                     <a href="https://t.me/fuckdiwurenge12"><i class="fab fa-telegram-plane"></i> 电报群</a>
                     <p>邮箱: 目前暂无</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                        <a href="https://t.me/fuckdiwurenge12"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="javascript:void(0);" id="qq-social-link"><i class="fab fa-qq"></i></a>
+                        <a href="https://t.me/fuckdiwurenge12" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://github.com/ChibaQY/-" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -1052,6 +1050,11 @@
                     card.classList.add('animated');
                 }
             });
+        });
+        
+        document.getElementById('qq-social-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('目前暂无官方QQ');
         });
     </script>
 </body>
